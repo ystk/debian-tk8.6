@@ -1,0 +1,22 @@
+--- a/unix/configure
++++ b/unix/configure
+@@ -11227,7 +11227,7 @@
+     TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
+ fi
+ 
+-TK_LIBRARY='$(prefix)/lib/tk$(VERSION)'
++test -z "$TK_LIBRARY" && TK_LIBRARY='$(prefix)/lib/tk$(VERSION)'
+ PRIVATE_INCLUDE_DIR='$(includedir)'
+ HTML_DIR='$(DISTDIR)/html'
+ TK_PKG_DIR='tk$(VERSION)'
+--- a/unix/configure.in
++++ b/unix/configure.in
+@@ -678,7 +678,7 @@
+     TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
+ fi
+ 
+-TK_LIBRARY='$(prefix)/lib/tk$(VERSION)'
++test -z "$TK_LIBRARY" && TK_LIBRARY='$(prefix)/lib/tk$(VERSION)'
+ PRIVATE_INCLUDE_DIR='$(includedir)'
+ HTML_DIR='$(DISTDIR)/html'
+ TK_PKG_DIR='tk$(VERSION)'
